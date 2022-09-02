@@ -4,27 +4,25 @@
 
 html,
 body {
-  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.intro-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -10;
+  /* background-image: linear-gradient(#78e61259, #ffffff2d, #ffffff1a),
+    url("/waldemar-brandt-JYPDh4ter10-unsplash.jpg"); */
+  background-image: url("/old-newspaper-g5beecccd2_1920.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
 }
-
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+#with-srcdoc {
+  pointer-events: none;
 }
