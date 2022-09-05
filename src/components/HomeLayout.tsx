@@ -105,7 +105,7 @@ const HomeLayout = function () {
             id="with-srcdoc"
             width="80%"
             className="h-[80vh]"
-            sandbox="allow-same-origin allow-scripts"
+            sandbox="allow-same-origin"
           >
             <p>Your browser does not support iframes!</p>
           </iframe>
