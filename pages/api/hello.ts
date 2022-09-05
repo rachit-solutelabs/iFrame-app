@@ -15,9 +15,9 @@ export default async function handler(
     return res.status(405).json({ isError: true, data: "Method not allowed!" });
   }
   const { url } = JSON.parse(req.body);
-  const url2 = new URL(url!);
+  // const url2 = new URL(url!);
   try {
-    const response = await fetch(url2);
+    const response = await fetch(url);
     const isHeaderSameorigin = response.headers.get("x-frame-options");
     if (isHeaderSameorigin === null) {
       return res.status(200).json({ isError: false, data: "ok" });
