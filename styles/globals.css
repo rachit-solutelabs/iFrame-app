@@ -23,6 +23,6 @@ body {
   filter: blur(4px);
   -webkit-filter: blur(4px);
 }
-#with-srcdoc {
+/* #with-srcdoc {
   pointer-events: none;
-}
+} */
