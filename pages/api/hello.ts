@@ -14,7 +14,8 @@ export default async function handler(
   if (req.method !== "POST") {
     return res.status(405).json({ isError: true, data: "Method not allowed!" });
   }
-  const { url } = JSON.parse(req.body);
+  type myURL = { url: string | URL };
+  const { url }: myURL = JSON.parse(req.body);
   // const url2 = new URL(url!);
   try {
     const response = await fetch(url);
