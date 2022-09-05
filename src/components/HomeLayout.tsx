@@ -27,7 +27,12 @@ const HomeLayout = function () {
     setLoading(true);
     const { url } = values;
     try {
-      const response = await fetch(`${location.origin}/api/hello?url=${url}`);
+      const response = await fetch(`${location.origin}/api/hello`, {
+        method: "POST",
+        body: JSON.stringify({
+          url,
+        }),
+      });
       const resJson: Data = await response.json();
       if (resJson?.isError) {
         throw new Error(resJson?.data);

@@ -11,14 +11,13 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  if (req.method !== "GET") {
+  if (req.method !== "POST") {
     return res.status(405).json({ isError: true, data: "Method not allowed!" });
   }
-  const { url } = req;
-  const url2 = url?.slice(15);
-  const url3 = new URL(url2!);
+  const { url } = JSON.parse(req.body);
+  const url2 = new URL(url!);
   try {
-    const response = await fetch(url3);
+    const response = await fetch(url2);
     const isHeaderSameorigin = response.headers.get("x-frame-options");
     if (isHeaderSameorigin === null) {
       return res.status(200).json({ isError: false, data: "ok" });
@@ -33,7 +32,7 @@ export default async function handler(
       //   .replaceAll(`href\n="/`, `href\n="${hostName}`)
       return res.status(200).json({
         isError: false,
-        data: resText,
+        data: String(resText),
         isHeaderSameorigin: true,
       });
     } else {
