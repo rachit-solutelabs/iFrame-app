@@ -32,7 +32,7 @@ export default async function handler(
       //   .replaceAll(`href\n="/`, `href\n="${hostName}`)
       return res.status(200).json({
         isError: false,
-        data: String(resText),
+        data: resText,
         isHeaderSameorigin: true,
       });
     } else {
